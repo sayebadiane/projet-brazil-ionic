@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>catalogue</ion-title>
+    <ion-button class="btn-all ok" slot="start">
+      <ion-menu-button  menu="main-menu"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <img src="assets/images/tfqmijkr77qr0tr3shss.webp" alt="" srcset="">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/photo-1504674900247-0877df9cc836.avif" alt="" srcset="">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/istockphoto-886931204-612x612.jpg" alt="" srcset="">
+      </ion-slide>
+    </ion-slides>
+    <ion-segment>
+      <ion-segment-button (click)="filtreMenuBurger('menu')" value="menus">
+        <ion-label >Menu</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  (click)="filtreMenuBurger('burger')" value="burger">
+        <ion-label>burger</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="filtrePrix($event)" [value]="prix">
+        
+        
+        <ion-label>Prix</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-card *ngFor="let catalogue of catalogues">
+      <ion-card-header>
+        <ion-card-subtitle>{{catalogue.prix}} FCFA</ion-card-subtitle>
+        <ion-card-title>
+          <img id="imageback" src="data:image/png;base64,{{catalogue?.image}}" alt="" srcset="">
+        </ion-card-title>
+        <div class="bnteticone">
+          <ion-card-title>{{ catalogue.nom }}</ion-card-title>
+          <ion-button class="btn-all"  routerLink="/detail/{{catalogue.id}}">
+           <ion-icon name="information-circle-outline"></ion-icon>          </ion-button>
+
+        </div>
+      </ion-card-header>
+  
+    </ion-card>
+
+ 
+
+</ion-content>

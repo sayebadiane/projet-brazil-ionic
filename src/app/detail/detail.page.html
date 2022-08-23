@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ng-container *ngIf="details!=undefined">
+  <ng-container *ngIf="details.burgers">
+  <ion-content>   
+    <img src="assets/images/istockphoto-886931204-612x612.jpg" alt="" srcset="">
+    <ion-title>{{details.burgers.nom}} </ion-title>
+    
+    <ion-text>Un hamburger, ou par aphérèse burger, est un sandwich d'origine allemande, composé de deux pains de forme
+      ronde
+      généralement garnis de steak haché et de crudités, salade, tomate,
+      oignon, cornichon, et de sauce</ion-text>
+    <div class="titlebtn">
+      <ion-label>PRIX:{{ details.burgers.prix }}FCFA</ion-label>
+      <ion-button class="btn-all">Add</ion-button>
+    </div>
+</ion-content>
+</ng-container>
+<ng-container *ngIf="details.menus">
+  <ion-content>
+    <img src="assets/images/istockphoto-886931204-612x612.jpg" alt="" srcset="">
+    <ion-title> {{details.menus.nom}} </ion-title>
+
+    <ion-text>Un hamburger, ou par aphérèse burger, est un sandwich d'origine allemande, composé de deux pains de forme
+      ronde
+      généralement garnis de steak haché et de crudités, salade, tomate,
+      oignon, cornichon, et de sauce</ion-text>
+    <div class="titlebtn">
+      <ion-label>PRIX:{{ details.menus.prix }}FCFA</ion-label>
+      <ion-button class="btn-all">Add</ion-button>
+    </div>
+  </ion-content>
+</ng-container>
+</ng-container>
+

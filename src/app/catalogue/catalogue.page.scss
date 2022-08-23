@@ -1,0 +1,41 @@
+
+
+.bnteticone  {
+    // width: 10px;
+    // height: 20px;
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+
+ion-button {
+  height: 25px;
+  width: 45px;
+  
+       
+
+}
+ion-slide img{
+    width: 100vh;
+    height: 25vh;
+}
+#imageback{
+    width: 90vh;
+    height: 20vh;
+
+}
+.ok{
+   
+            width: 30px;
+            height: 20px;
+     
+}
+ion-segment-button{
+    --color-checked:rgb(233, 178, 33);
+   
+    --color-hover:rgb(233, 178, 33);
+    --indicator-heigth:3px;
+}
+
+
