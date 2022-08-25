@@ -38,7 +38,7 @@ export class CommandeService {
 
 
 
-    return this.http.get<any>(`${this.urlget}/21/commandes`).pipe(
+    return this.http.get<any>(`${this.urlget}/32/commandes`).pipe(
       map(data => {
         let catalogue: Commande = data['hydra:member']
         console.log("voici l objet" + data['hydra:member'][0])

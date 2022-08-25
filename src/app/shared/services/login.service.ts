@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
+import jsw_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +24,13 @@ export class LoginService {
   login(pUsername: any, pPassword: any) {
 
 
+  }
+  getDecodeToken(token:string): any{
+    try {
+      return jsw_decode(token);
+    } 
+    catch (error) {
+      return null
+    }
   }
 }
