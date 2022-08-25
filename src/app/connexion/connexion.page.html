@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+<form action="" class="formulaire">
+  <ion-item>
+
+    <ion-input name="logine" [(ngModel)]="logine"  type="mail" placeholder="Adresse email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+
+    <ion-input name="password" [(ngModel)]="password" type="password" placeholder="Mot de passe">
+    </ion-input>
+  </ion-item>
+  <ion-button  (click)="generationToken()" class="btn-all" Connexion>Connexion</ion-button>
+</form>
+</ion-content>

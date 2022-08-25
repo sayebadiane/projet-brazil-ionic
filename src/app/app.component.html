@@ -1,5 +1,4 @@
 <ion-app>
-
 <ion-menu class="btn-all" contentId="main" menuId="main-menu">
   <ion-header>
     <ion-toolbar>
@@ -12,15 +11,15 @@
           <ion-icon name="restaurant-outline"></ion-icon>
           <ion-label>Catalogue</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item routerLink="/commande">
         <ion-icon name="list-outline"></ion-icon>
-        <ion-label>Mes Commandes</ion-label>
+        <ion-label >Mes Commandes</ion-label>
       </ion-item>
       <ion-item>
         <ion-icon class="btn-all" name="cart-outline"></ion-icon>
         <ion-label>Panier</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item routerLink="/connexion">
         <ion-icon name="wifi-outline"></ion-icon>
         <ion-label>Connexion</ion-label>
       </ion-item>
@@ -39,12 +38,12 @@
         <ion-label>Catalogue</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="map">
+      <ion-tab-button routerLink="/gestionnaire-commande" tab="map">
         <ion-icon name="list-outline"></ion-icon>
         <ion-label>Mes Commandes</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="about">
+      <ion-tab-button tab="about" >
         <ion-icon class="btn-all" name="cart-outline"></ion-icon>
         <ion-label>Panier</ion-label>
       </ion-tab-button>

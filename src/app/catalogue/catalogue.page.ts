@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { RangeCustomEvent, RangeValue } from '@ionic/core';
-import { filter } from 'rxjs/operators';
+import { RangeValue } from '@ionic/core';
 
 import { CatalogueService } from '../shared/services/catalogue.service';
 
@@ -56,7 +55,8 @@ export class CataloguePage implements OnInit {
      
       
       buttons: [{
-        text:'ok',
+        text: 'ok',
+        
         handler: (value: any)=>{
           this.catalogueServices.all().subscribe(data => {
            this.catalogues=data.produits.filter(produit=>produit.prix<=value.rang)
