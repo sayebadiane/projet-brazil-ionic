@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { LoginService } from './shared/services/login.service';
 import { StorageService } from './shared/services/storage.service';
 
 @Component({
@@ -8,23 +9,34 @@ import { StorageService } from './shared/services/storage.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private storage: Storage, private storages: StorageService) {
+  public role: any
+  
+
+  constructor(private storage: Storage, private storages: StorageService, private loginservice: LoginService) {
     this.storage.create();
+
+   
     
   }
   
-  getData(): boolean{
+  getToken(): any{
+    
+    
     let bool = false
     this.storage.get('token').then((data) => {
+      console.log(data)
       if (data != null) {
-
-       bool=true
+        let tabtoken = this.loginservice.getDecodeToken(data)
+        console.log(tabtoken.roles[0])
+        this.role = tabtoken.roles[0]
+        console.log(this.role)
+        return data
+       
       }
     });
-    return bool
+    return this.role
   }
- 
- 
-
- 
+  
+  
+  
 }

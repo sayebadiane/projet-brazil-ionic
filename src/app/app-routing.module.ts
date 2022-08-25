@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'gestionnaire-commande',
     loadChildren: () => import('./gestionnaire-commande/gestionnaire-commande.module').then( m => m.GestionnaireCommandePageModule)
   },
+  {
+    path: 'detail-commande/:id',
+    loadChildren: () => import('./detail-commande/detail-commande.module').then( m => m.DetailCommandePageModule)
+  },
  
 ];
 

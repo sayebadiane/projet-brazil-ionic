@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detailCommande</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="catalogue"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="details.menuCommandes">
+    <ion-list *ngFor="let item of details.menuCommandes">
+      <ion-item>
+        <ion-thumbnail>
+          <ion-img src="assets/images/photo-1551782450-17144efb9c50.avif"></ion-img>
+        </ion-thumbnail>
+        <ion-label>{{item.menu.nom}} </ion-label>
+        <ion-label>{{item.menu.prix}} </ion-label>
+        <ion-label>{{item.quantite}} </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ng-container>
+  
+  <ng-container *ngIf="details.burgerCommandes">
+    <ion-list *ngFor="let item of details.burgerCommandes">
+      <ion-item>
+        <ion-thumbnail>
+          <ion-img src="assets/images/tfqmijkr77qr0tr3shss.webp"></ion-img>
+        </ion-thumbnail>
+        <ion-label >{{item.burger.nom}} </ion-label>
+        <ion-label>{{item.burger.prix}} </ion-label>
+        <ion-label>{{item.quantite}} </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ng-container>
+  
+
+</ion-content>

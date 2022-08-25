@@ -7,13 +7,16 @@ import { CommandeService } from '../shared/services/commande.service';
   styleUrls: ['./commande.page.scss'],
 })
 export class CommandePage implements OnInit {
-  public commande:any
+  public commande: any
+  filterDate: any
+  filterEtat:any
 
   constructor(private servicecommande: CommandeService) { }
 
   ngOnInit(): void {
     this.servicecommande.commandeClient().subscribe(data => {
-      this.commande = data.filter(produit=>(produit.etat=="terminer"))
+      this.commande = data
+      console.log(data)
       
     })
   }

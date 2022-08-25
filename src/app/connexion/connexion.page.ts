@@ -26,7 +26,8 @@ export class ConnexionPage implements OnInit {
     this.service.token(this.logine, this.password).subscribe(data => {
       this.tok = data;
       
-      this.storage.set('token', data.token);
+      this.storage.set('token', data.token).then(() => {
+        window.location.reload    })
       this.storage.set('user', data.user);
       this.storage.get('user').then((data) => {
         console.log('Your age is', data);
