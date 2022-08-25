@@ -20,7 +20,5 @@ export class ComplementDetailService {
   detail(id: any) {
     return this.http.get<any>(`${this.url}/${id}`)
 
-
-
   }
 }
