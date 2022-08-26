@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+
 import { LoginService } from './shared/services/login.service';
 import { StorageService } from './shared/services/storage.service';
 
@@ -11,10 +12,13 @@ import { StorageService } from './shared/services/storage.service';
 })
 export class AppComponent {
   public role: any
+  isboolean:boolean
+ 
   
 
   constructor(private storage: Storage, private storages: StorageService, private loginservice: LoginService, private route:Router) {
     this.storage.create();
+    
 
    
     
@@ -39,12 +43,22 @@ export class AppComponent {
   }
   
   logoutClicked() {
-    alert('deconnexion')
+ 
     this.storage.clear();
     this.route.navigate(['/catalogue'])
     location.reload()
     
   } 
+  verifytoken = this.storage.get('token').then(data => {
+    console.log(data)
+    if (data == null) {
+      this.isboolean=false
+    } else {
+      this.isboolean=true
+    }
+    console.log('tahir '+this.isboolean)
+  })
   
+
   
 }

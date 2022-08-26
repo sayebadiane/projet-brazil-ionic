@@ -22,22 +22,22 @@ export class ConnexionPage implements OnInit {
 
 
   }
-  generationToken(): void {
+  generationToken() {
     this.service.token(this.logine, this.password).subscribe(data => {
       this.tok = data;
       
-      this.storage.set('token', data.token).then(() => {
-        window.location.reload    })
-      this.storage.set('user', data.user);
-      this.storage.get('user').then((data) => {
-        console.log('Your age is', data);
+      this.storage.set('token', data.token)
+      this.storage.set('user', data.user).then(() => {
+       window.location.reload
       });
+      // this.storage.get('user').then((data) => {
+      //   console.log('Your age is', data);
+      // });
       
       this.serviceautho.token = data.token;
       if (data.token != '') {
-
-       this.connexionReusie()
-        this.router.navigate(['catalogue'])
+      this.connexionReusie()
+        this.router.navigate(['/catalogue'])
       }
 
     }, error => {
@@ -49,11 +49,13 @@ export class ConnexionPage implements OnInit {
   login(logine: any, password: any) {
     throw new Error('Method not implemented.');
   }
-  connexionReusie() {
-    message: 'Your settings have been saved.'
-    alert("connexion reussie")
-
-    
+  async connexionReusie() {
+    const toast = await this.toastController.create({
+      message: 'La connexion est reussie',
+      duration: 2000,
+      color: 'success'
+    });
+    toast.present();
   }
 
 

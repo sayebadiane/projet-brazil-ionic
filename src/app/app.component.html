@@ -13,24 +13,37 @@
       <ion-back-button class="btn-all"></ion-back-button>
     </ion-buttons>
     <ion-list>
-      <ion-item>
+      <ion-menu-toggle>
+        <ion-item>
           <ion-icon name="restaurant-outline"></ion-icon>
           <ion-label>Catalogue</ion-label>
       </ion-item>
-      <ion-item routerLink="/commande" >
-        <ion-icon name="list-outline"></ion-icon>
-        <ion-label >Mes Commandes</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon class="btn-all" name="cart-outline"></ion-icon>
-        <ion-label>Panier</ion-label>
-      </ion-item>
-      <ion-item routerLink="/connexion">
-        <ion-icon name="wifi-outline"></ion-icon>
-        <ion-label>Connexion</ion-label>
-      </ion-item>
-
-    <ion-item (click)="logoutClicked()">Déconnexion</ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+       <ion-item routerLink="/commande" *ngIf="isboolean==true">
+         <ion-icon name="list-outline"></ion-icon>
+           <ion-label>Mes Commandes</ion-label>
+         </ion-item> 
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item>
+          <ion-icon class="btn-all" name="cart-outline"></ion-icon>
+          <ion-label>Panier</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/connexion" *ngIf="isboolean==false">
+          <ion-icon name="wifi-outline"></ion-icon>
+          <ion-label>Connexion</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item (click)="logoutClicked()" *ngIf="isboolean==true">
+          <ion-icon name="wifi-outline"></ion-icon>
+          <ion-label>Déconnexion</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
     </ion-list>
 
   </ion-content>
@@ -46,7 +59,7 @@
         <ion-label>Catalogue</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button routerLink="/gestionnaire-commande" tab="map">
+      <ion-tab-button routerLink="/commande" *ngIf="isboolean==true" tab="map">
         <ion-icon name="list-outline"></ion-icon>
         <ion-label>Mes Commandes</ion-label>
       </ion-tab-button>
