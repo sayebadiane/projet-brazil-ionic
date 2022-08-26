@@ -12,11 +12,11 @@ export class DetailCommandeService {
   public commande: Commande| undefined
 
   constructor(private http: HttpClient) { }
-  detailCommande(): Observable<Commande[]> {
+  detailCommande(id:any): Observable<Commande[]> {
     // let id: any = this.storage.get('user').then((data) => { });
     // alert(id)
     // console.log(id);
-    return this.http.get<any>(`${this.url}/commandes/50`).pipe(
+    return this.http.get<any>(`${this.url}/commandes/${id}`).pipe(
       map(data => {
         // let catalogue: Commande = data['hydra:member']
         

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Commande } from '../shared/models/commande';
 import { DetailCommandeService } from '../shared/services/detail-commande.service';
 
@@ -11,10 +12,12 @@ export class DetailCommandePage implements OnInit {
   commande: Commande | undefined
   public details
 
-  constructor(private detailcommandeService: DetailCommandeService) { }
+  constructor(public route: ActivatedRoute,private detailcommandeService: DetailCommandeService) { }
 
   ngOnInit() {
-    this.detailcommandeService.detailCommande().subscribe(
+    let id = this.route.snapshot.paramMap.get('id');
+    alert(id)
+    this.detailcommandeService.detailCommande(id).subscribe(
       data => {
         this.details = data
         console.log(data)
