@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { LoginService } from './shared/services/login.service';
 import { StorageService } from './shared/services/storage.service';
@@ -12,7 +13,7 @@ export class AppComponent {
   public role: any
   
 
-  constructor(private storage: Storage, private storages: StorageService, private loginservice: LoginService) {
+  constructor(private storage: Storage, private storages: StorageService, private loginservice: LoginService, private route:Router) {
     this.storage.create();
 
    
@@ -37,6 +38,13 @@ export class AppComponent {
     return this.role
   }
   
+  logoutClicked() {
+    alert('deconnexion')
+    this.storage.clear();
+    this.route.navigate(['/catalogue'])
+    location.reload()
+    
+  } 
   
   
 }
