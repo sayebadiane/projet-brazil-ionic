@@ -8,6 +8,9 @@ import { Commande } from "../shared/models/commande";
 
 export class FilterPipe implements PipeTransform {
     transform(items: Commande[], filtreEtat: string): any {
+        if (!filtreEtat) {
+            filtreEtat = 'en cour'
+        }
         if (!items || !filtreEtat) {
             return items
         }

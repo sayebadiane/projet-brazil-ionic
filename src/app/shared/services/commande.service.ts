@@ -17,7 +17,7 @@ export class CommandeService {
   private urlterminer: string = "http://localhost:8000/api/zones"
   public commande: Commande[] | undefined
 
-  constructor(private http: HttpClient, private storage: StorageService) { }
+  constructor(private http: HttpClient) { }
   commenderBack(montant: any, burgerCommandes: any, menuCommandes: any, zone: any): Observable<any> {
     const loginData = {
       "montant": montant,
@@ -31,11 +31,9 @@ export class CommandeService {
 
   }
 
-  commandeClient(): Observable<Commande[]> {
-    let id: any =  this.storage.get('user').then((data) => {});
-    alert(id)
-    console.log(id);
-    return this.http.get<any>(`${this.urlget}/32/commandes`).pipe(
+  commandeClient(id:any): Observable<Commande[]> {
+   
+    return this.http.get<any>(`${this.urlget}/${id}/commandes`).pipe(
       map(data => {
         let catalogue: Commande = data['hydra:member']
         console.log("voici l objet" + data['hydra:member'][0])

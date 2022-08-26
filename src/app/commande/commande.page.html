@@ -10,14 +10,14 @@
     <ion-input type="date" placeholder="fitre par date" [(ngModel)]="filterDate"></ion-input>
   </ion-item>
 </ion-header>
-
 <ion-content>
-  <ion-list *ngFor="let item of commande | FilterDatePipe:filterDate | FilterPipe:filterEtat">
+  <ion-list *ngFor="let item of commande | FilterPipe:filterEtat">
     <ion-item routerLink="/detail-commande/{{item.id}}" href detail>
       <ion-label>{{item.id}} </ion-label>
       <ion-label>{{item.montant}} F</ion-label>
       <ion-label>{{item.etat}} </ion-label>
     </ion-item>
   </ion-list>
+ 
   
 </ion-content>
