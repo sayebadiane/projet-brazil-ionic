@@ -29,13 +29,13 @@ export class ConnexionPage implements OnInit {
       
       this.storage.set('token', data.token)
       this.storage.set('user', data.user).then(() => {
-        // window.location.reload();
+      //  window.location.reload();
 
-        window.addEventListener("load", event => {
-          document.getElementById("reload").onclick = function () {
-            location.reload();
-          }
-        });
+        // window.addEventListener("load", event => {
+        //   document.getElementById("reload").onclick = function () {
+        //     location.reload();
+        //   }
+        // });
 
 
 
@@ -47,19 +47,18 @@ export class ConnexionPage implements OnInit {
       this.serviceautho.token = data.token;
       if (data.token != '') {
         this.connexionReusie()
-        this.storage.get('token').then((data) => {
-          let tabtoken = this.service.getDecodeToken(data)
-         
-          console.log(tabtoken.roles[0])
-          this.role = tabtoken.roles[0]
-          if (this.role === "ROLE-LIVREUR") {
-           
-            this.router.navigate(['/catalogue'])  
-          }
+        let tabtoken = this.service.getDecodeToken(data.token)
+
+        console.log(tabtoken.roles[0])
+        this.role = tabtoken.roles[0]
+        if (this.role === "ROLE_LIVREUR") {
         
-}
-        );
-        this.router.navigate(['/catalogue'])
+          this.router.navigate(['/livraison'])
+        }
+        else if (this.role === "ROLE_CLIENT") {
+          this.router.navigate(['/catalogue'])
+
+        }
       }
     }, error => {
 
