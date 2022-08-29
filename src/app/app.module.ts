@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -20,8 +22,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     
    
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-               ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },QRScanner
+              ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
