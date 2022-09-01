@@ -20,7 +20,7 @@
       </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
-       <ion-item routerLink="/commande" *ngIf="isboolean==true">
+       <ion-item routerLink="/livraison" *ngIf="isboolean==true">
          <ion-icon name="list-outline"></ion-icon>
            <ion-label>Mes Commandes</ion-label>
          </ion-item> 
@@ -37,6 +37,12 @@
           <ion-label>Connexion</ion-label>
         </ion-item>
       </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  *ngIf="isboolean==true" routerLink="/qr">
+              <ion-icon name="wifi-outline"></ion-icon>
+              <ion-label>Mes Livraisons</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item (click)="logoutClicked()" *ngIf="isboolean==true">
           <ion-icon name="wifi-outline"></ion-icon>
@@ -59,12 +65,12 @@
         <ion-label>Catalogue</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button routerLink="/qr" *ngIf="isboolean==true" tab="map">
+      <ion-tab-button routerLink="/qr-client" *ngIf="isboolean==true" tab="map">
         <ion-icon name="list-outline"></ion-icon>
         <ion-label>Valider</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="about" >
+      <ion-tab-button tab="about">
         <ion-icon class="btn-all" name="cart-outline"></ion-icon>
         <ion-label>Panier</ion-label>
       </ion-tab-button>

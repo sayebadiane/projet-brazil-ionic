@@ -12,7 +12,7 @@
       
      
     </ion-item>
-    <ion-item href detail *ngFor="let commande of item.commandes">
+    <ion-item href detail *ngFor="let commande of item.commandes" routerLink="/qr/{{commande.id}}">
         <ion-label>{{commande.id}} </ion-label>
       <ion-label>{{commande.montant}} F</ion-label>
       <ion-label>{{commande.zone.nom}} </ion-label>

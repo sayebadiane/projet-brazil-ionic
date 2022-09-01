@@ -12,7 +12,7 @@ export class DetailCommandeService {
   public commande: Commande| undefined
 
   constructor(private http: HttpClient) { }
-  detailCommande(id:any): Observable<Commande[]> {
+  detailCommande(id:any): Observable<Commande> {
     // let id: any = this.storage.get('user').then((data) => { });
     // alert(id)
     // console.log(id);

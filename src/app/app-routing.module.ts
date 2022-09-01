@@ -40,8 +40,16 @@ const routes: Routes = [
     loadChildren: () => import('./livraison/livraison.module').then( m => m.LivraisonPageModule)
   },
   {
-    path: 'qr',
+    path: 'qr/:id',
     loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
+  {
+    path: 'qr-client',
+    loadChildren: () => import('./qr-client/qr-client.module').then( m => m.QrClientPageModule)
+  },
+  {
+    path: 'panier',
+    loadChildren: () => import('./panier/panier.module').then( m => m.PanierPageModule)
   },
  
 ];

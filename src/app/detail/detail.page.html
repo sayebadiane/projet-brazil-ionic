@@ -18,7 +18,9 @@
       oignon, cornichon, et de sauce</ion-text>
     <div class="titlebtn">
       <ion-label>PRIX:{{ details.burgers.prix }}FCFA</ion-label>
-      <ion-button class="btn-all">Add</ion-button>
+    </div>
+    <div class="styl_btn">
+      <ion-button (click)="yell($event)" expand="block" routerLink="/panier" class="btn-all">Add</ion-button>
     </div>
 </ion-content>
 </ng-container>
@@ -33,8 +35,9 @@
       oignon, cornichon, et de sauce</ion-text>
     <div class="titlebtn">
       <ion-label>PRIX:{{ details.menus.prix }}FCFA</ion-label>
-      <ion-button class="btn-all">Add</ion-button>
     </div>
+ 
+      <ion-button (click)="yell($event)" routerLink="/panier" class="btn-all">Add</ion-button>
   </ion-content>
 </ng-container>
 </ng-container>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item routerLink="/detail-commande" href detail>
+      <ion-thumbnail>
+        <ion-img src="assets/images/photo-1551782450-17144efb9c50.avif"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{panier.montant}} </ion-label>
+      <ion-label>{{panier.burgerCommandes[0].burger.nom }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
